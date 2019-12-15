@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+		
+			.news {
+				width: 300px;
+				height: 50px;
+				background: #ccc;
+				margin: 0 auto;
+			}
+		
+			.news li {
+				width: 100px;
+				height: 50px;
+				text-align: center;
+				font-size: 24px;
+				float: left;
+				list-style: none;
+				line-height: 50px;
+			}
+		
+			.bigbox {
+				width: 300px;
+				height: 300px;
+				margin: 0 auto;
+				overflow: hidden;
+				border: 1px solid blue;
+			}
+		
+			.bigbox ul {
+				width: 300px;
+				height: 300px;
+				list-style: none;
+			}
+			.selected{
+				background: #f00;
+				color: white;
+			}
+			
+			.hide{
+				display: none;
+			}
+		</style>
+		<script src="js/jquery-3.4.1.min.js"></script>
+	</head>
+	<body>
+		<ul class="news">
+			<li class="selected" nn="0">国内</li>
+			<li class="news2" nn="1">国外</li>
+			<li class="news3" nn="2">体育</li>
+		</ul>
+		
+		<div class="bigbox">
+			<ul class="box1">
+				<li>国内消息1</li>
+				<li>国内消息2</li>
+				<li>国内消息3</li>
+			</ul>
+			<ul class="box2 hide">
+				<li>国外消息1</li>
+				<li>国外消息2</li>
+				<li>国外消息3</li>
+			</ul>
+			<ul class="box3 hide">
+				<li>体育消息1</li>
+				<li>体育消息2</li>
+				<li>体育消息3</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				$(".news li").on("mouseenter",function(){
+					$(".news li").removeClass("selected");
+					$(this).addClass("selected");
+					var nn = $(this).attr("nn");
+					$(".bigbox ul").addClass("hide");
+					$(".bigbox ul").eq(n).removeClass("hide");
+				})
+				
+			})
+		</script>
+	</body>
+<html>
